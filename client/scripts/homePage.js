@@ -84,7 +84,6 @@ window.onload = function(){
         })
         }).then(res => res.json());
     
-        window.location.href = "../../index.html";
     }
     /*************************************************/
 }
