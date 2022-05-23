@@ -1,0 +1,32 @@
+#addmovie-div{
+    font-size: 16pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 5%;
+}
+#addmovie-div input, label, select, button{
+    display: block;
+    margin-top: 10px;
+    font-size: 16pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input, select, button{
+    border: 3px solid black;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+input{
+    height: 40px;
+    width: 90%;
+}
+select{
+    height: 50px;
+    width: 92%;
+}
+button{
+    height: 50px;
+    width: 92%;
+    background-color: rgba(128, 128, 128, 0.421);
+}
+button:hover{
+    background-color: gray;
+}

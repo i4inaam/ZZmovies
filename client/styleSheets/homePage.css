@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+#navbar{
+    background-color: rgb(52, 227, 52);
+    display: grid;
+    grid-template-columns: 72% 28%;
+    height: 35px;
+    padding: 10px;
+    color: rgb(8, 0, 0);
+    font-size: 18pt;
+}
+#menu{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    
+}
+#menu div{
+    margin-left: 25px;
+    cursor: pointer;
+}
+input{
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 10px;
+    font-size: 16pt;
+}
+button{
+    background-color: rgb(0, 4, 4);
+    color: aliceblue;
+    font-size: 14pt;
+    height: auto;
+    width: auto;
+    border-radius: 10px; 
+    padding: 5px;
+}
+button:hover{
+    background-color: rgb(21, 200, 57);
+}
+#main{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    font-size: 16pt;
+    padding: 30px;
+}
+#left{
+    /* background-color: rgb(120, 242, 89); */
+    border: 1px solid white;
+    padding-right: 50px;
+}
+#left div{
+    border-bottom: 1px solid greenyellow;
+    padding: 20px;
+    cursor: pointer;
+}
+#movieData{
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+#movieData div{
+    border: 1px solid greenyellow;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+#movieData div > img{
+    width: 230px;
+    height: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
