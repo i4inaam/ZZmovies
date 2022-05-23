@@ -7,8 +7,10 @@ window.onload = function(){
 }
     /*************************************************/
 
-    //search movies
+    
     if(window.location.href=="http://127.0.0.1:5500/index.html"){
+
+    //search movies
     document.getElementById('searchBtn').onclick =  async function(){
         let keywrd = document.getElementById('searchBox').value;
         keywrd = keywrd.trim();
@@ -33,11 +35,6 @@ window.onload = function(){
         }
         }
     }
-
-    /*************************************************/
-
-    //Movies By Category
-    
     /*************************************************/
 
     //Action movies
@@ -52,8 +49,6 @@ window.onload = function(){
     }
     /*************************************************/
 
-    /*************************************************/
-
     //2022 movies
     document.getElementById('2022').onclick = function(){
         moviesByYear(2022);
@@ -64,13 +59,19 @@ window.onload = function(){
     document.getElementById('2021').onclick = function(){
         moviesByYear(2021);
     }
-}
     /*************************************************/
 
-    //Add new movie
+    //go to Add Movie page
+    document.getElementById('addMovi').onclick = function(){
+        window.location.href = "./client/addMovie.html";
+    }
+    /*************************************************/
+}
+
     else{
+
+    //Add new movie
     document.getElementById('addMovie').onclick = async function(){
-        
         await fetch('http://localhost:2160/movies/addmovie',{
         method: "POST",
         headers: {"content-type" : "application/json"},
@@ -83,11 +84,15 @@ window.onload = function(){
         })
         }).then(res => res.json());
     
+        window.location.href = "../../index.html";
     }
-}
     /*************************************************/
 }
 
+} 
+/************window onload ends here***************/
+
+//Movies By Category
 async function moviesByCategory(categry){
     const catMovies = await fetch('http://localhost:2160/movies/category/' + categry,{
     method: "GET",
@@ -97,6 +102,7 @@ async function moviesByCategory(categry){
     document.getElementById('msg').innerHTML = "Result for " + categry + " movies. <a href='index.html'>click here</a> to go back."
     showdata(catMovies);
 }
+/*************************************************/
 
  //Movies By Year
  async function moviesByYear(year){
@@ -108,7 +114,9 @@ async function moviesByCategory(categry){
     document.getElementById('msg').innerHTML = "Result for " + year + " movies. <a href='index.html'>click here</a> to go back."
     showdata(yearMovies);
 }
+/*************************************************/
 
+//show all movies
 function showdata(arr){
     let moviesData = "";
 
@@ -126,7 +134,9 @@ function showdata(arr){
 
     document.getElementById("movieData").innerHTML =  moviesData;
 }
+/*************************************************/
 
+//fetch all movies
 async function fetchAllMovies(){
     const allMovies = await fetch('http://localhost:2160/movies/',{
         method: "GET",
@@ -135,3 +145,4 @@ async function fetchAllMovies(){
 
     showdata(allMovies);
 }
+/*************************************************/
